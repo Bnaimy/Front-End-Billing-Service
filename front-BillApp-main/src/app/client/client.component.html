@@ -1,0 +1,39 @@
+<h1 class="pt-3">List des clients</h1>
+
+<br>
+<table class="table table-hover">
+    <thead>
+    <tr class="table-active">
+        
+        <th>ID</th>
+        <th>name</th>
+        <th>email</th>
+        
+        <th>Action</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+       
+        
+            <tr *ngFor=" let client of clients">
+                
+                <td>{{client.id}}</td>
+                <td>{{client.name}}</td>
+                <td>{{client.email}}</td>
+                
+                <td><button class="btn btn-primary">afficher</button></td>
+                
+               
+                
+            </tr>
+
+            
+            
+            <div *ngIf="!clients">
+                <p>Aucun client actuellement</p>
+            </div>
+    </tbody>
+</table>
+
+

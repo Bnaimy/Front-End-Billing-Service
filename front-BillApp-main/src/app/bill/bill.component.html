@@ -1,0 +1,39 @@
+<h1 class="pt-3">List des factures</h1>
+
+<br>
+<table class="table table-hover">
+    <thead>
+    <tr class="table-active">
+        
+        <th>ID</th>
+        <th>Date facture</th>
+        <th>Id client</th>
+        
+        <th>Actions</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+       
+        
+            <tr *ngFor=" let bill of bills">
+                
+                <td>{{bill.id}}</td>
+                <td>{{bill.billingDate | date:'fullDate'}}</td>
+                <td>{{bill.customerID}}</td>
+                
+                <td><button class="btn btn-primary small" [routerLink]="['/detailBill' , bill.id]">Détail</button></td>
+                
+               
+                
+            </tr>
+
+            
+            
+            <div *ngIf="!bills">
+                <p>Aucun bill actuellement</p>
+            </div>
+    </tbody>
+</table>
+
+

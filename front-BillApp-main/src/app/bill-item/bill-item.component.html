@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-md-offset-2">
+            <h1 class="mb-4">Détail de la facture : </h1>
+            <div class="widget dark-bg p-xl mb-4" >
+                
+                <ul class="list-unstyled m-t-md">
+                    
+                    <li>
+                        
+                        <b>- ID : </b>
+                        {{bill.id}}
+                    </li>
+                    <li>
+                        <i class="fas fa-file-signature"></i>
+                        <b>- Date facture : </b>
+                        {{bill.billingDate | date:'fullDate'}}
+                    </li>
+                   
+                    <li>
+                        <i class="fas fa-calendar-alt"></i>
+                        <b>- Client : </b>
+                        {{bill.customer.name}}
+                    </li>
+
+                    <li>
+                        <i class="fas fa-user-tie"></i>
+                        <b>- Produits : </b>
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">nom du produit</th>
+                                <th scope="col">prix</th>
+                                <th scope="col">quantité</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let produit of bill.productItems">
+                                <th scope="row">{{produit.id}}</th>
+                                <td>{{produit.productName}}</td>
+                                <td>{{produit.price}}</td>
+                                <td>{{produit.quantity}}</td>
+                              </tr>
+                             
+                            </tbody>
+                          </table>
+                        
+                    </li>
+                    <br>
+
+                    <li style="float:right;">
+                        <i class="fas fa-user-tie"></i>
+                        <b>- Prix total :  </b>
+                        {{prixTotal}} DH
+                    </li>
+                    
+                </ul>
+            </div> 
+        </div>    
+    </div>
+</div>

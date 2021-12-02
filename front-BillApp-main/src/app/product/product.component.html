@@ -1,0 +1,39 @@
+<h1 class="pt-3">List des produits</h1>
+
+<br>
+<table class="table table-hover">
+    <thead>
+    <tr class="table-active">
+        
+        <th>ID</th>
+        <th>name</th>
+        <th>prix</th>
+        <th>quantité</th>
+        <th>Action</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+       
+        
+            <tr *ngFor=" let product of products">
+                
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.quantity}}</td>
+                <td><button class="btn btn-primary">afficher</button></td>
+                
+               
+                
+            </tr>
+
+            
+            
+            <div *ngIf="!products">
+                <p>Aucun produit actuellement</p>
+            </div>
+    </tbody>
+</table>
+
+
